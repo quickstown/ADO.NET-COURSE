@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Колледж</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/routers.js" defer></script>
+</head>
+<body>
+    <header>
+        <button id="studentsButton" type="button">Студенты</button>
+        <button id="groupsButton" type="button">Группы</button>
+    </header>
+
+    <main>
+        <p id="message"></p>
+
+        <table id="studentsTable" hidden>
+            <thead>
+                <tr><th>ID</th><th>Имя</th><th>Фамилия</th><th>Возраст</th><th>ID группы</th><th>Действия</th></tr>
+            </thead>
+            <tbody id="studentBody"></tbody>
+        </table>
+
+        <table id="groupsTable" hidden>
+            <thead>
+                <tr><th>ID</th><th>Группа</th></tr>
+            </thead>
+            <tbody id="groupBody"></tbody>
+        </table>
+
+        <section id="studentSection">
+            <h2 id="studentFormTitle">Добавить студента</h2>
+            <form id="studentForm">
+                <label>Имя
+                    <input id="firstNameStudent" type="text" placeholder="Иван" required>
+                </label>
+                <label>Фамилия
+                    <input id="lastNameStudent" type="text" placeholder="Иванов" required>
+                </label>
+                <label>Возраст
+                    <input id="ageStudent" type="number" min="1" max="120" placeholder="18" required>
+                </label>
+                <label>Группа
+                    <select id="groupId" required>
+                        <option value="">Выберите группу</option>
+                    </select>
+                </label>
+                <button id="saveStudentButton" type="submit">Добавить</button>
+                <button id="cancelEditButton" type="button" hidden>Отмена</button>
+            </form>
+        </section>
+
+        <section id="groupSection" hidden>
+            <h2>Добавить группу</h2>
+            <form id="groupForm">
+                <label>Название группы
+                    <input id="groupName" type="text" placeholder="ИС-21" maxlength="100" required>
+                </label>
+                <button type="submit">Добавить группу</button>
+            </form>
+        </section>
+    </main>
+</body>
+</html>
